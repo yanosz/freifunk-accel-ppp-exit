@@ -2,11 +2,11 @@
 
 This role configures accel-pppd to be used as an PPtP Internet-Exit for Freifunk nodes.
 
-Please note, that this role *does not* install accel-ppp, since no debian packages are provided at any reasonable source. This role doesn't do anything with accel-ppp - except managing `/etc/accel-ppp.conf`.
+Please note, that this role **does not** install accel-ppp, since no debian packages are provided at any reasonable source. This role doesn't do anything with accel-ppp - except managing `/etc/accel-ppp.conf`.
 
-Also note, that PPtP's encryption is insecure and prevents basic Deep Packet Inspection (DPI) only - e.g. pattern matching based DPI such as Snort.
+Also note, that PPTP's encryption is insecure and prevents basic Deep Packet Inspection (DPI) only - e.g. pattern matching based DPI such as Snort.
 
-The idea is to use PPtP as a nat'able control channel for high performance, unencrypted GRE-tunnels. However, mppe-encrypted connections are accepted, too: It's out of scope to decide, whether basic DPI evasion is needed. If encryption ought to be secure, please consider using fastd or openvpn instead of pptp.
+The idea is to use PPTP as a nat'able channel for high performance, unencrypted GRE-tunnels. However, mppe-encrypted connections are accepted, too: It's out of scope to decide, whether basic DPI evasion is needed. If encryption ought to be secure, please consider using fastd or openvpn instead of pptp.
 
 Unlike other exit roles, this role also creates an unbound configuration for the ppp interfaces.
 
