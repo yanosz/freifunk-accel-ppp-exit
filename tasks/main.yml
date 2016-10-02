@@ -1,0 +1,14 @@
+- name: Creating /etc/accel-ppp.conf
+  template: >
+    src=accel-ppp.conf.j2
+    dest=/etc/accel-ppp.conf
+    owner=root
+    group=root
+    mode='0644'
+- name: 'Creating unbound configuration in /etc/unbound/unbound.conf.d/accel-pptp-exit.conf'
+  template: >
+    src=unbound.conf.j2
+    dest=/etc/unbound/unbound.conf.d/accel-pptp-exit.conf
+    owner=root
+    group=root
+    mode='0644'
